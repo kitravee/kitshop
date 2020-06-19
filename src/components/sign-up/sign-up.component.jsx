@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 import { signUpStart } from "../../redux/user/user.actions";
 
-import "./sign-up.styles.scss";
+import { SignUpContainer, SignUpTitle } from "./sign-up.styles";
 
 const SignUp = ({ signUpStart }) => {
   // constructor() {
@@ -56,8 +56,8 @@ const SignUp = ({ signUpStart }) => {
   };
 
   return (
-    <div className="sign-up">
-      <h2 className="title">I do not have a account</h2>
+    <SignUpContainer>
+      <SignUpTitle className="title">I do not have a account</SignUpTitle>
       <span>Sign up with your email and password</span>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <FormInput
@@ -92,11 +92,9 @@ const SignUp = ({ signUpStart }) => {
           label="confirmPassword"
           required
         />
-        <div className="buttons">
-          <CustomButton type="submit"> Sign up </CustomButton>
-        </div>
+        <CustomButton type="submit"> Sign up </CustomButton>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 
